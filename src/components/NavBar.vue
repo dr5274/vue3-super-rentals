@@ -1,9 +1,5 @@
 <script setup>
 import { RouterLink } from 'vue-router'
-
-// export default {
-//   name: 'NavBar',
-// }
 </script>
 
 <template>

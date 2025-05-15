@@ -1,5 +1,5 @@
 <script setup>
-import RentalImage from '@/components/RentalImage.vue'
+import RentalImage from '@/components/RentalImage'
 
 const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment']
 

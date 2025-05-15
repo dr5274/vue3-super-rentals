@@ -1,5 +1,5 @@
 <script setup>
-import Rental from '@/components/Rental.vue'
+import Rental from '@/components/Rental'
 
 const props = defineProps(['model'])
 const rentals = props.model.map((rental) => {

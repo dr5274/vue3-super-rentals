@@ -1,10 +1,10 @@
 <script setup>
-import Jumbo from '@/components/Jumbo.vue'
-import { RouterLink } from 'vue-router'
-import Rentals from '@/components/Rentals.vue'
-import rentals from '@/data/rentals.json'
+import { RouterLink } from "vue-router";
+import { useRentals } from "@/composables/useRentals";
+import Jumbo from "@/components/Jumbo";
+import Rentals from "@/components/Rentals";
 
-const model = rentals.data
+const { model } = useRentals();
 </script>
 
 <template>

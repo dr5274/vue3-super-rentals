@@ -1,20 +1,19 @@
 <script setup>
-import { useRoute } from 'vue-router'
-import rentals from '@/data/rentals.json'
-import Jumbo from '@/components/Jumbo.vue'
-import ShareButton from '@/components/ShareButton.vue'
-import RentalImage from '@/components/RentalImage.vue'
+import { useRoute } from "vue-router";
+import { useRentals } from "@/composables/useRentals";
+import Jumbo from "@/components/Jumbo";
+import ShareButton from "@/components/ShareButton";
+import RentalImage from "@/components/RentalImage";
 
-const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment']
-
-const route = useRoute()
-const id = route.params.id
-const model = rentals.data.filter((rental) => rental.id === id)[0]
-const { title, owner, city, category, bedrooms, description, image } = model.attributes
+const route = useRoute();
+const id = route.params.id;
+const { findBy, categories } = useRentals();
+const model = findBy(id);
+const { title, owner, city, category, bedrooms, description, image } = model.attributes;
 const rental = {
   id: id,
   owner: owner,
-  type: COMMUNITY_CATEGORIES.includes(category) ? 'Community' : 'Standalone',
+  type: categories.includes(category) ? 'Community' : 'Standalone',
   category: category,
   city: city,
   bedrooms: bedrooms,

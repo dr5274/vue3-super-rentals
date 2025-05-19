@@ -1,18 +1,18 @@
 <script setup>
-import RentalImage from '@/components/RentalImage'
+import { useRentals } from "@/composables/useRentals";
+import RentalImage from "@/components/RentalImage";
 
-const COMMUNITY_CATEGORIES = ['Condo', 'Townhouse', 'Apartment']
-
-const props = defineProps(['model'])
+const props = defineProps(["model"]);
+const { categories } = useRentals();
 const rental = {
   id: props.model.id,
   owner: props.model.owner,
-  type: COMMUNITY_CATEGORIES.includes(props.model.category) ? 'Community' : 'Standalone',
+  type: categories.includes(props.model.category) ? "Community" : "Standalone",
   city: props.model.city,
   bedrooms: props.model.bedrooms,
   image: props.model.image,
   title: props.model.title,
-}
+};
 </script>
 
 <template>

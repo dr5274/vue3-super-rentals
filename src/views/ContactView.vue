@@ -1,6 +1,6 @@
 <script setup>
-import { RouterLink } from 'vue-router'
-import Jumbo from '@/components/Jumbo'
+import { RouterLink } from "vue-router";
+import Jumbo from "@/components/Jumbo";
 </script>
 
 <template>

@@ -7,20 +7,7 @@ import RentalImage from "@/components/RentalImage";
 
 const route = useRoute();
 const id = route.params.id;
-const { findBy, categories } = useRentals();
-const model = findBy(id);
-const { title, owner, city, category, bedrooms, description, image } = model.attributes;
-const rental = {
-  id: id,
-  owner: owner,
-  type: categories.includes(category) ? 'Community' : 'Standalone',
-  category: category,
-  city: city,
-  bedrooms: bedrooms,
-  image: image,
-  title: title,
-  description: description,
-}
+const { model: rental } = useRentals(id);
 </script>
 
 <template>

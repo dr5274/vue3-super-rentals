@@ -2,20 +2,7 @@
 import Rental from '@/components/Rental'
 
 const props = defineProps(['model'])
-const rentals = props.model.map((rental) => {
-  const id = rental.id
-  const { title, owner, city, category, bedrooms, description, image } = rental.attributes
-  return {
-    id,
-    title,
-    owner,
-    city,
-    category,
-    bedrooms,
-    description,
-    image,
-  }
-})
+const rentals = props.model;
 </script>
 
 <template>

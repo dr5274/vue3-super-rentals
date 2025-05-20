@@ -1,17 +1,16 @@
 import rentals from "@/data/rentals.json";
 
-export function useRentals() {
-  const model = rentals.data;
+const _rentals = rentals.data.map((rental) => {
+  return {
+    id: rental.id,
+    type: ["Condo", "Townhouse", "Apartment"].includes(rental.attributes.category) ? "Community" : "Standalone",
+    ...rental.attributes,
+  };
+});
 
-  function findBy(id) {
-    return model.find((rental) => rental.id === id);
-  }
-
-  const categories = ['Condo', 'Townhouse', 'Apartment']
-
+export function useRentals(id) {
+  const model = id ? _rentals.find((rental) => rental.id === id) : _rentals;
   return {
     model,
-    findBy,
-    categories,
   };
 }

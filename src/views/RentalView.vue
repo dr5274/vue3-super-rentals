@@ -1,13 +1,14 @@
 <script setup>
 import { useRoute } from "vue-router";
-import { useRentals } from "@/composables/useRentals";
+import { useRentalStore } from "@/stores/rentals";
 import Jumbo from "@/components/Jumbo";
 import ShareButton from "@/components/ShareButton";
 import RentalImage from "@/components/RentalImage";
 
 const route = useRoute();
 const id = route.params.id;
-const { model: rental } = useRentals(id);
+const { rentals } = useRentalStore();
+const rental = rentals.find((rental) => rental.id === id);
 </script>
 
 <template>

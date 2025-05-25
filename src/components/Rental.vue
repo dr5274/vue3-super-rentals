@@ -1,8 +1,8 @@
 <script setup>
 import RentalImage from "@/components/RentalImage";
 
-const props = defineProps(["model"]);
-const rental = props.model;
+const props = defineProps(["rental"]);
+const { rental } = props;
 </script>
 
 <template>

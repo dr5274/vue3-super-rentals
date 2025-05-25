@@ -1,10 +1,10 @@
 <script setup>
 import { RouterLink } from "vue-router";
-import { useRentals } from "@/composables/useRentals";
+import { useRentalStore } from "@/stores/rentals";
 import Jumbo from "@/components/Jumbo";
 import Rentals from "@/components/Rentals";
 
-const { model } = useRentals();
+const { rentals } = useRentalStore();
 </script>
 
 <template>
@@ -16,6 +16,6 @@ const { model } = useRentals();
         <RouterLink to="/about" class="button"> About Us </RouterLink>
       </template>
     </Jumbo>
-    <Rentals :model="model" />
+    <Rentals :rentals="rentals" />
   </main>
 </template>

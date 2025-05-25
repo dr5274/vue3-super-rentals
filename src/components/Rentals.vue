@@ -1,8 +1,8 @@
 <script setup>
-import Rental from '@/components/Rental'
+import Rental from "@/components/Rental";
 
-const props = defineProps(['model'])
-const rentals = props.model;
+const props = defineProps(["rentals"]);
+const { rentals } = props;
 </script>
 
 <template>
@@ -14,7 +14,7 @@ const rentals = props.model;
 
     <ul class="results">
       <li v-for="rental in rentals" :key="rental.id">
-        <Rental :model="rental" />
+        <Rental :rental="rental" />
       </li>
     </ul>
   </div>

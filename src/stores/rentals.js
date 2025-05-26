@@ -59,8 +59,8 @@ export const useRentalStore = defineStore("rentals", () => {
   const rentals = ref(
     _rentals.map((rental) => {
       return {
-        type: rental.type,
         id: rental.id,
+        type: rental.type,
         ...rental.attributes,
       };
     })
